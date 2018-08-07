@@ -49,6 +49,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -60,6 +61,10 @@ private static ArrayList<Long> jitter = new ArrayList<Long>();
 private static ArrayList<Long> retransmissoes = new ArrayList<Long>();
 private static ArrayList<Long> perdasglob = new ArrayList<Long>();
 static ArrayList<String> escolhidos = new ArrayList<String>();
+static ArrayList<String> best = new ArrayList<String>();
+static ArrayList<String> msg = new ArrayList<String>();
+static ArrayList<Long> indiceretransmissaoglob  = new ArrayList<Long>();
+
 
 static String rede;
 long counter= 0;
@@ -185,7 +190,7 @@ static int decisao;
 				 long count = System.currentTimeMillis();
 				 long countend = 0;
 				 System.out.println(count);
-				 while (flag == 0 && countend - count <= 20000)
+				 while (flag == 0 && countend - count <= 180000)
 				 {
 					 long ms=0;
 					 long[] ping = new long[3];
@@ -293,12 +298,11 @@ static int decisao;
 						 aux = aux + pacotesperdidos;
 						 perdasglob.add(aux);
 					     long percentage = (long) ((rettemp*100)/counter);
+					     indiceretransmissaoglob.add(percentage);
 					     System.out.println("numero de retransmissoes:" + rettemp);
 					     System.out.println("indice de retransmissão:" + percentage + "%");
 					     System.out.println("numero de pacotes perdidos:" + perdasglob.get(perdasglob.size()-1));
-					     Pacotesperdidos pa = new Pacotesperdidos(rede);
-					     Throughput throughput = new Throughput(rede);
-					     pa.main();
+					
 					     new Analyzer().escreverarquivos(rede);
 					     new Analyzer().escreverteste();
 				     }
@@ -340,8 +344,12 @@ static int decisao;
 	 	{
 	 		rede = escolhidos.get(i);
 	 		an.conectar(rede);
+	 		Pacotesperdidos pa = new Pacotesperdidos(rede);
+	 		pa.main();
+	 		Throughput throughput = new Throughput(rede);
+	 		throughput.main();
 			(new Thread(new Analyzer())).start();
-			Thread.sleep(10000);
+			Thread.sleep(200000);
 	 	}
 		/*while(true)
 		{
@@ -431,9 +439,49 @@ static int decisao;
                             bw4.newLine();
                         }
                         bw4.close();
+                        
+                        File file5 = new File("C:/Users/pablo/Desktop/Python/capturaindiceretransmissao"+rede+".txt");
+                		FileOutputStream fos5 = new FileOutputStream(file5);
+                      
+                            file5 = new File("C:/Users/pablo/Desktop/Python/capturaindiceretransmissao"+rede+".txt");
+                            if(file5.exists());
+                            {
+                            	file5.delete();
+                            	file5 = new File("C:/Users/pablo/Desktop/Python/capturaindiceretransmissao"+rede+".txt");
+                            }
+                            BufferedWriter bw5 = new BufferedWriter(new OutputStreamWriter(fos5));
+                            int tamanho5 = indiceretransmissaoglob.size();
+                            for (int i = 0; i < tamanho5; i++) 
+                            {
+                                bw5.write(i+1 + "," + indiceretransmissaoglob.get(i).toString());
+                                bw5.newLine();
+                            }
+                            bw5.close();
          
         
 	}
+	
+	public void bestwifi(String rede)
+	{
+		try {
+		      FileReader arq = new FileReader("capturajitter"+rede+".txt");
+		      BufferedReader lerArq = new BufferedReader(arq);
+		 
+		      String linha = lerArq.readLine(); // l
+		      while (linha != null) {
+		        //System.out.printf("%s\n", linha);
+		        msg.add(linha);
+		        linha = lerArq.readLine(); // lê da segunda até a última linha
+		      }
+		 
+		      arq.close();
+		    } catch (IOException e) {
+		        System.err.printf("Erro na abertura do arquivo: %s.\n",
+		          e.getMessage());
+		    }
+		System.out.println(msg.toString());
+	}
+
 	public void escreverteste() throws Exception
 	{
 		File file;

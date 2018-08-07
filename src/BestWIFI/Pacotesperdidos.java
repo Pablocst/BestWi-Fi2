@@ -23,7 +23,7 @@ public class Pacotesperdidos {
 		 ArrayList<String> perdidos = new ArrayList<String>();
 		 
 		 long startTime = System.currentTimeMillis(); //fetch starting time
-		 while(false||(System.currentTimeMillis()-startTime)<100000)
+		 while(false||(System.currentTimeMillis()-startTime)<10000)
 		 {
 			 try 
 		        { 

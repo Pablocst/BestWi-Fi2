@@ -10,14 +10,14 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class Throughput {
-	String redes;
+	static String redes;
 	
 	public Throughput(String rede)
 	{
 		this.redes = rede;
 	}
 	
-	public static void main(String[] args) throws IOException
+	public static void main() throws IOException
 	 {
 		 ArrayList<String> msg = new ArrayList<String>();
 		 ArrayList<String> taxa = new ArrayList<String>();
@@ -62,13 +62,13 @@ public class Throughput {
 				 taxa.add(msgtratamento);
 				 //long perdidoslong = Long.parseLong(msgtratamento);
 				 //System.out.println(perdidoslong);
-				 File file = new File("C:/Users/pablo/Desktop/Python/capturathroughput.txt");
+				 File file = new File("C:/Users/pablo/Desktop/Python/capturathroughput"+redes+".txt");
 	     		 FileOutputStream fos = new FileOutputStream(file);
-	             file = new File("C:/Users/pablo/Desktop/Python/capturathrouput.txt");
+	             file = new File("C:/Users/pablo/Desktop/Python/capturathrouput"+redes+".txt");
 	             if(file.exists());
 	             {
 	                 file.delete();
-	                 file = new File("C:/Users/pablo/Desktop/Python/capturathrouput.txt");
+	                 file = new File("C:/Users/pablo/Desktop/Python/capturathrouput"+redes+".txt");
 	             }
 	             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 	             for(int i=0; i<taxa.size(); i++)

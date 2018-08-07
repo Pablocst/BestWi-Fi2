@@ -6,28 +6,28 @@ socket() - WSAError: 10013
 switching to ICMP dll
 Pinging 8.8.8.8 with 32 bytes of data every 500 ms:
 
-Reply[1] from 8.8.8.8: bytes=32 time=51.1 ms TTL=123
-Reply[2] from 8.8.8.8: bytes=32 time=48.4 ms TTL=123
-Reply[3] from 8.8.8.8: bytes=32 time=50.8 ms TTL=123
-Reply[4] from 8.8.8.8: bytes=32 time=47.7 ms TTL=123
-Reply[5] from 8.8.8.8: bytes=32 time=48.9 ms TTL=123
-Reply[6] from 8.8.8.8: bytes=32 time=50.3 ms TTL=123
+Reply[1] from 8.8.8.8: bytes=32 time=54.6 ms TTL=123
+Reply[2] from 8.8.8.8: bytes=32 time=48.6 ms TTL=123
+Reply[3] from 8.8.8.8: bytes=32 time=103.5 ms TTL=123
+Reply[4] from 8.8.8.8: bytes=32 time=48.0 ms TTL=123
+Reply[5] from 8.8.8.8: bytes=32 time=47.6 ms TTL=123
+Reply[6] from 8.8.8.8: bytes=32 time=47.8 ms TTL=123
 Reply[7] from 8.8.8.8: bytes=32 time=47.8 ms TTL=123
-Reply[8] from 8.8.8.8: bytes=32 time=47.9 ms TTL=123
-Reply[9] from 8.8.8.8: bytes=32 time=47.8 ms TTL=123
-Reply[10] from 8.8.8.8: bytes=32 time=47.6 ms TTL=123
+Reply[8] from 8.8.8.8: bytes=32 time=47.3 ms TTL=123
+Reply[9] from 8.8.8.8: bytes=32 time=47.5 ms TTL=123
+Reply[10] from 8.8.8.8: bytes=32 time=47.7 ms TTL=123
 Reply[11] from 8.8.8.8: bytes=32 time=47.8 ms TTL=123
-Reply[12] from 8.8.8.8: bytes=32 time=47.8 ms TTL=123
-Reply[13] from 8.8.8.8: bytes=32 time=47.8 ms TTL=123
-Reply[14] from 8.8.8.8: bytes=32 time=47.5 ms TTL=123
-Reply[15] from 8.8.8.8: bytes=32 time=48.0 ms TTL=123
-Reply[16] from 8.8.8.8: bytes=32 time=47.2 ms TTL=123
-Reply[17] from 8.8.8.8: bytes=32 time=47.7 ms TTL=123
-Reply[18] from 8.8.8.8: bytes=32 time=48.5 ms TTL=123
-Reply[19] from 8.8.8.8: bytes=32 time=51.6 ms TTL=123
-Reply[20] from 8.8.8.8: bytes=32 time=66.4 ms TTL=123
+Reply[12] from 8.8.8.8: bytes=32 time=48.0 ms TTL=123
+Reply[13] from 8.8.8.8: bytes=32 time=47.7 ms TTL=123
+Reply[14] from 8.8.8.8: bytes=32 time=51.5 ms TTL=123
+Reply[15] from 8.8.8.8: bytes=32 time=47.3 ms TTL=123
+Reply[16] from 8.8.8.8: bytes=32 time=47.6 ms TTL=123
+Reply[17] from 8.8.8.8: bytes=32 time=47.6 ms TTL=123
+Reply[18] from 8.8.8.8: bytes=32 time=47.7 ms TTL=123
+Reply[19] from 8.8.8.8: bytes=32 time=48.3 ms TTL=123
+Reply[20] from 8.8.8.8: bytes=32 time=51.3 ms TTL=123
 
 Ping statistics for 8.8.8.8:
 	Packets: Sent = 20, Received = 20, Lost = 0 (0% loss)
 Approximate round trip times in milli-seconds:
-	Minimum = 47.2 ms, Maximum = 66.4 ms, Average = 49.4 ms
+	Minimum = 47.3 ms, Maximum = 103.5 ms, Average = 51.3 ms

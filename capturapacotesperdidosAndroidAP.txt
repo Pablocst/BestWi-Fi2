@@ -1,0 +1,33 @@
+
+Fast pinger version 3.00
+(c) Wouter Dhondt (http://www.kwakkelflap.com)
+
+socket() - WSAError: 10013
+switching to ICMP dll
+Pinging 8.8.8.8 with 32 bytes of data every 500 ms:
+
+Reply[1] from 8.8.8.8: bytes=32 time=270.4 ms TTL=119
+Reply[2] from 8.8.8.8: bytes=32 time=124.6 ms TTL=119
+Reply[3] from 8.8.8.8: bytes=32 time=95.2 ms TTL=119
+Reply[4] from 8.8.8.8: bytes=32 time=111.9 ms TTL=119
+Reply[5] from 8.8.8.8: bytes=32 time=130.7 ms TTL=119
+Reply[6] from 8.8.8.8: bytes=32 time=95.3 ms TTL=119
+Reply[7] from 8.8.8.8: bytes=32 time=142.7 ms TTL=119
+8.8.8.8: request timed out
+8.8.8.8: request timed out
+Reply[10] from 8.8.8.8: bytes=32 time=427.3 ms TTL=119
+8.8.8.8: request timed out
+Reply[12] from 8.8.8.8: bytes=32 time=265.1 ms TTL=119
+8.8.8.8: request timed out
+Reply[14] from 8.8.8.8: bytes=32 time=110.8 ms TTL=119
+Reply[15] from 8.8.8.8: bytes=32 time=774.5 ms TTL=119
+Reply[16] from 8.8.8.8: bytes=32 time=441.4 ms TTL=119
+8.8.8.8: request timed out
+Reply[18] from 8.8.8.8: bytes=32 time=944.8 ms TTL=119
+8.8.8.8: request timed out
+8.8.8.8: request timed out
+
+Ping statistics for 8.8.8.8:
+	Packets: Sent = 20, Received = 13, Lost = 7 (35% loss)
+Approximate round trip times in milli-seconds:
+	Minimum = 95.2 ms, Maximum = 944.8 ms, Average = 302.7 ms
